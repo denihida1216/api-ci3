@@ -12,7 +12,15 @@ class Users extends MY_Controller
     public function index_get()
     {
         // $users = $this->User_model->get_all_users();
-        $this->response(['status' => true, 'data' => []]);
+        $this->response([
+			'metadata' => [
+				'code' => 200,
+				'message' => 'OK',
+			], 
+			'response' => [
+			['id' => 1, 'name' => 'John Doe'],
+			['id' => 2, 'name' => 'Jane Smith'],
+		]]);
     }
 
     public function index_post()
